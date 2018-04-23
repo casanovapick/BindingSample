@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BindingSample</string>
+    <string name="view_card">View Card</string>
+</resources>
