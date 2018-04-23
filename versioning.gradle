@@ -1,0 +1,6 @@
+def getVersionName() {
+    def versionPropertiesFile = rootProject.file("version.properties")
+    def versionProperties = new Properties()
+    versionProperties.load(new FileInputStream(versionPropertiesFile))
+    return versionProperties['versionName']
+}
