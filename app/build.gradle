@@ -13,10 +13,24 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "SERVER_URL", '"https://api.pokemontcg.io/v1/"'
     }
+    signingConfigs {
+        config {
+            def keystorePropertiesFile = rootProject.file("keystore.properties")
+            def keystoreProperties = new Properties()
+            if(keystorePropertiesFile.exists()) {
+                keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+            }
+            keyAlias keystoreProperties.get('keyAlias','')
+            keyPassword keystoreProperties.get('keyPassword','')
+            storeFile file(keystoreProperties.get('storeFile','key.jsk'))
+            storePassword keystoreProperties.get('storePassword','')
+        }
+    }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
     compileOptions {
