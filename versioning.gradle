@@ -1,6 +1,24 @@
 def getVersionName() {
-    def versionPropertiesFile = rootProject.file("version.properties")
+    Properties versionProperties = loadVersionProperties()
+    return versionProperties['versionName']
+}
+
+private Properties loadVersionProperties() {
+    File versionPropertiesFile = getVersionFile()
     def versionProperties = new Properties()
     versionProperties.load(new FileInputStream(versionPropertiesFile))
-    return versionProperties['versionName']
+    versionProperties
+}
+
+private File getVersionFile() {
+    def versionPropertiesFile = rootProject.file("version.properties")
+    versionPropertiesFile
+}
+
+task increaseBuildNumber <<{
+    Properties versionProperties = loadVersionProperties()
+    def buildNumber = versionProperties['build'] as int
+    buildNumber = buildNumber + 1
+    versionProperties.setProperty('build', buildNumber.toString())
+    versionProperties.store(getVersionFile().newWriter(), null)
 }
