@@ -71,3 +71,6 @@ fastlane/readme.md
 
 #Sonar
 .scannerwork/
+
+#Artifact
+*.zip
