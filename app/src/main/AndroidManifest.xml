@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".card.CardActivity"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="68c18894f9ca4a3ad7c733257ffe5889825ce24f" />
     </application>
 
 </manifest>
