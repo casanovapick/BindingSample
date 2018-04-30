@@ -9,7 +9,7 @@ android {
         applicationId "com.ex.wannnasitchaiphinan.bindingsample"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 1
+        versionCode 2
         versionName getVersionName()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "SERVER_URL", '"https://api.pokemontcg.io/v1/"'
