@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.MainActivity">
+        <activity android:name="com.ex.wannnasitchaiphinan.bindingsample.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".card.CardActivity"></activity>
+        <activity android:name="com.ex.wannnasitchaiphinan.bindingsample.card.CardActivity"></activity>
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="68c18894f9ca4a3ad7c733257ffe5889825ce24f" />
